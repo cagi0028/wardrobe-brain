@@ -128,7 +128,7 @@ export default async function DashboardPage() {
                   <div className="w-14 h-14 flex-shrink-0 grid grid-cols-2 grid-rows-2 gap-px rounded-xl overflow-hidden bg-stone-100">
                     {thumbs.map((oi, i) => {
                       const hex = oi.item?.colours[0] ? (COLOUR_HEX[oi.item.colours[0] as Colour] ?? "#E8E5DC") : "#E8E5DC";
-                      const img = oi.item ? getImg(oi.item as Parameters<typeof getImg>[0]) : null;
+                      const img = oi.item ? getImg(oi.item as unknown as Parameters<typeof getImg>[0]) : null;
                       return (
                         <div key={i} className="relative overflow-hidden bg-stone-100">
                           {img ? <Image src={img} alt="" fill className="object-cover" sizes="28px" />

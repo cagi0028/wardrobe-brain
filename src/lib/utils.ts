@@ -78,14 +78,8 @@ export function daysSince(dateStr: string): number {
 
 // ─── Image URL helper ─────────────────────────────────────────────────────────
 
-export function getImg(
-  item: { image_url?: string | null } & Record<string, unknown>
-): string | null {
-  return (
-    (item.image_url as string | null | undefined) ??
-    (item.photo_url as string | null | undefined) ??
-    null
-  );
+export function getImg(item: any): string | null {
+  return item?.image_url ?? item?.photo_url ?? null;
 }
 
 // ─── Currency ─────────────────────────────────────────────────────────────────

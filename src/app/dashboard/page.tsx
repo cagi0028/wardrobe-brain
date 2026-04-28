@@ -74,7 +74,7 @@ export default async function DashboardPage() {
           <div className="grid grid-cols-4 gap-2 px-4">
             {recentItems.map((item) => {
               const hex = item.colours[0] ? (COLOUR_HEX[item.colours[0] as Colour] ?? "#E8E5DC") : "#E8E5DC";
-              const img = getImg(item as Parameters<typeof getImg>[0]);
+              const img = getImg(item as unknown as Parameters<typeof getImg>[0]);
               return (
                 <Link key={item.id} href={`/items/${item.id}`} className="flex flex-col gap-1 group">
                   <div className="aspect-[3/4] w-full rounded-xl overflow-hidden bg-stone-100">
